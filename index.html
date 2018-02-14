@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Actually - Web Developer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="main/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="main/frontend.css">
+    <link rel="stylesheet" href="main/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main/main.js"></script>
+</head>
+<body>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="main">
+        <header>
+           <img src="main/logo.png" alt="jakeactually logo" height="75">
+        </header>
+
+        <div class="s" style="height:20px;"></div>
+        <div style="font-size: 1.5em;">
+            Hola, soy Jeyko Caicedo, un desarrollador web<br>
+            de Guayaquil, Ecuador.
+        </div>
+
+        <div class="s" style="height:50px;"></div>
+        <div class="rh">
+            <h2>Behance</h2>
+            <div>
+                <a href="https://www.behance.net/JakeActually" target="_blank">https://www.behance.net/JakeActually</a>
+            </div>
+            <div class="s" style="height:15px;"></div>
+            <h2>Github</h2>
+            <div>
+                <a href="https://github.com/jakeactually" target="_blank">https://github.com/jakeactually</a>
+            </div>
+            <div class="s" style="height:15px;"></div>
+            <h2>Codepen</h2>
+            <div>
+                <a href="http://codepen.io/JakeActually/" target="_blank">http://codepen.io/JakeActually/</a>
+            </div>
+        </div>
+        <div class="rs" style="font-size: 2em;">
+            <div>
+                <a class="no-dec" href="https://www.behance.net/JakeActually" target="_blank">Behance</a>
+            </div>
+            <div class="s" style="height:20px;"></div>
+            <div>
+                <a class="no-dec" href="https://github.com/jakeactually" target="_blank">Github</a>
+            </div>
+            <div class="s" style="height:20px;"></div>
+            <div>
+                <a class="no-dec" href="http://codepen.io/JakeActually/" target="_blank">Codepen</a>
+            </div>
+        </div>
+        
+        <div class="s" style="height:50px;"></div>
+        <h1>Contacto</h1>
+        <div class="s" style="height:15px;"></div>
+        <div class="rh">
+            <div>Telf: 0982440530</div>
+            <div>Correo: jakeactually@outlook.com</div>
+        </div>
+        <div class="rs">
+            <div>Telf:</div>
+            <div>0982440530</div>
+            <div>Correo:</div>
+            <div>jakeactually@outlook.com</div>
+        </div>
+        <div class="s" style="height:20px;"></div>
+        <form>
+            <div id="message"></div>
+            <label>
+                <input type="text" name="name" placeholder="Nombre" required>
+            </label>
+            <label>
+                <input type="email" name="mail" placeholder="Correo" required>
+            </label>
+            <label>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+            </label>
+            <div id="submit">
+                <input type="submit">
+                <svg id="loader" width="20" height="20" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" stroke-dasharray="160" stroke="#000000" fill="none" stroke-width="20"></circle>
+                </svg>
+            </div>
+        </form>
+    </div>
+
+</body>
+<script src="main/main.js"></script>
+</html>
