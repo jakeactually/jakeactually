@@ -6,3 +6,5 @@ target
 /.project
 /.settings
 /RUNNING_PID
+public/elm-file-manager
+public/elm-site-builder

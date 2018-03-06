@@ -42,12 +42,12 @@ textarea {
     align-items: center;
 }
 
-input[type="submit"] {
+button {
     border-radius: 0;
     background-color: #000000;
 }
 
-input[type="submit"]:hover {
+button:hover {
     background-color: #4d4d4d;
 }
 

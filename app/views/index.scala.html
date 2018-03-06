@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jake Actually - Web Developer</title>
-    <link rel="shortcut icon" type="image/x-icon" href="main/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="@routes.Assets.versioned("images/favicon.png")">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
-    <link rel="stylesheet" href="main/minimal.css">
-    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/minimal.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/jakeactually.css")">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="main/main.js"></script>
+    <script src="@routes.Assets.versioned("javascripts/jakeactually.js")"></script>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 
     <div id="main">
         <header>
-           <img src="main/logo.png" alt="jakeactually logo" height="75">
+           <img src="@routes.Assets.versioned("images/logo.png")" alt="jakeactually logo" height="75">
         </header>
 
         <div class="s" style="height:20px;"></div>
@@ -63,13 +63,13 @@
         <div class="s" style="height:15px;"></div>
         <div class="rh">
             <div>Telf: 0982440530</div>
-            <div>Correo: jakeactually@outlook.com</div>
+            <div>Correo: jakeactually@@outlook.com</div>
         </div>
         <div class="rs">
             <div>Telf:</div>
             <div>0982440530</div>
             <div>Correo:</div>
-            <div>jakeactually@outlook.com</div>
+            <div>jakeactually@@outlook.com</div>
         </div>
         <div class="s" style="height:20px;"></div>
         <form>
@@ -84,7 +84,7 @@
                 <textarea name="message" placeholder="Mensaje" required></textarea>
             </label>
             <div id="submit">
-                <input type="submit">
+                <button>Enviar</button>
                 <svg id="loader" width="20" height="20" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" stroke-dasharray="160" stroke="#000000" fill="none" stroke-width="20"></circle>
                 </svg>
@@ -93,5 +93,4 @@
     </div>
 
 </body>
-<script src="main/main.js"></script>
 </html>
