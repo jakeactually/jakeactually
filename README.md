@@ -1,2 +1,0 @@
-# jakeactually
-Personal site
