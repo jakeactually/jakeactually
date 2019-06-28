@@ -1,13 +1,21 @@
 body {
     padding: 50px;
-    font-family: sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1.5em;
+}
+
+a {
+    font-weight: 700;
 }
 
 a:visited {
     color: blue;
 }
 
-h1 {
-    font-size: 1em;
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
 }
