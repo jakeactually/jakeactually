@@ -1,0 +1,11 @@
+jakeactually.com {
+	header /codepen {
+		Access-Control-Allow-Origin *
+	}
+
+	reverse_proxy /uno* jakeactually.com:9000
+
+	file_server {
+		root /jakeactually
+	}
+}
