@@ -5,7 +5,5 @@ jakeactually.com {
 
 	reverse_proxy /uno* jakeactually.com:9000
 
-	file_server {
-		root /jakeactually
-	}
+	file_server
 }
