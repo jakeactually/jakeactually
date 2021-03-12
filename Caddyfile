@@ -3,5 +3,14 @@ jakeactually.com {
 		Access-Control-Allow-Origin *
 	}
 
+	handle_path /cuarenta/api/* {
+		rewrite * {path}
+		reverse_proxy jakeactually.com:5000
+	}
+
+	handle_path /cuarenta/* {
+		try_files cuarenta/{path} /cuarenta/index.html
+	}
+
 	file_server
 }
