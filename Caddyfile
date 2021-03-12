@@ -1,5 +1,5 @@
 jakeactually.com {
-	header /codepen {
+	header /codepen/* {
 		Access-Control-Allow-Origin *
 	}
 
