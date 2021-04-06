@@ -4,6 +4,12 @@ body {
     font-size: 1.5em;
 }
 
+@media (max-width: 768px) {
+    body {
+        font-size: 1.25em;
+    }
+}
+
 a {
     font-weight: 700;
 }
@@ -22,4 +28,20 @@ li {
 
 img {
     max-width: calc(100vw - 100px);
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+}
+
+#content {
+    position: relative;
+}
+
+section {
+    color: white;
+    mix-blend-mode: difference;
 }
