@@ -12,5 +12,14 @@ jakeactually.com {
 		try_files cuarenta/{path} /cuarenta/index.html
 	}
 
+	handle_path /uno/api/* {
+		rewrite * /api{path}
+		reverse_proxy jakeactually.com:8080
+	}
+
+	handle_path /uno/* {
+		try_files uno/{path} /uno/index.html
+	}
+
 	file_server
 }
