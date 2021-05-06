@@ -21,5 +21,10 @@ jakeactually.com {
 		try_files uno/{path} /uno/index.html
 	}
 
+	handle_path /file-api/* {
+		rewrite * {path}
+		reverse_proxy jakeactually.com:3000
+	}
+
 	file_server
 }
