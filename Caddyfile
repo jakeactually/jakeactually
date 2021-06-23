@@ -5,7 +5,7 @@ jakeactually.com {
 
 	handle_path /cuarenta/api/* {
 		rewrite * {path}
-		reverse_proxy jakeactually.com:5000
+		reverse_proxy jakeactually.com:4000
 	}
 
 	handle_path /cuarenta/* {
@@ -19,6 +19,15 @@ jakeactually.com {
 
 	handle_path /uno/* {
 		try_files uno/{path} /uno/index.html
+	}
+
+	handle_path /checkers/api/* {
+		rewrite * /api{path}
+		reverse_proxy jakeactually.com:5000
+	}
+
+	handle_path /checkers/* {
+		try_files checkers/{path} /checkers/index.html
 	}
 
 	handle_path /file-api/* {
