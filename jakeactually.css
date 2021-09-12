@@ -51,8 +51,12 @@ section {
     grid-template-columns: 1fr 1fr;
 }
 
-#games h3 {
-    margin: 0;
+#games p {
+    font-size: 0.8em;;
+}
+
+#games .demo {
+    margin-right: 10px;
 }
 
 #games article {
