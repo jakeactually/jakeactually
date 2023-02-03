@@ -30,6 +30,11 @@ img {
     max-width: calc(100vw - 100px);
 }
 
+hr {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 canvas {
     position: fixed;
     top: 0;
