@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="pronoun" id="pronoun">
+        <option value="I">I</option>
+        <option value="you">You</option>
+        <option value="he">He</option>
+        <option value="she">She</option>
+        <option value="we">We</option>
+        <option value="they">They</option>
+    </select>
+    <select name="time" id="time">
+        <option value="Present">Present</option>
+        <option value="Past">Past</option>
+        <option value="Future">Future</option>
+    </select>
+    <div style="margin-bottom: 30px;">
+        Continuous <input type="checkbox" id="continuous">
+    </div>
+    <div style="margin-bottom: 30px;">
+        Perfect <input type="checkbox" id="perfect">
+    </div>
+    <select name="situation" id="situation">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="Question">Question</option>
+    </select>
+
+    <div id="english">
+        <span>I eat</span>
+    </div>
+</body>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        font-family: sans-serif;
+        font-size: 1.5em;
+        height: calc(100vh - 100px);
+        margin: 0;
+        box-sizing: border-box;
+        background: #eee;
+    }
+    select {
+        display: block;
+        margin-bottom: 30px;
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    select {
+        border: 2px solid gold;
+        background: white;
+    }
+
+    #english {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #english span {
+        padding: 10px;
+        background-color:gold;
+    }
+</style>
+<script>
+    const eatPresent = { he: 'eats', default: 'eat' };
+    const bePresent = { I: 'am', he: 'is', default: 'are' };
+    const bePast = { you: 'were', default: 'was' };
+    const doPresent = { he: 'does', default: 'do' };
+    const havePresent = { he: 'has', default: 'have' };
+
+    const pronounFallback = { she: 'he', we: 'you', they: 'you' };
+    const eatTimes = { Present: eatPresent, Past: 'ate', Future: 'eat' };
+    const beTimes = { Present: bePresent, Past: bePast };
+    const haveTimes = { Present: havePresent, Past: 'had' };
+    const doTimes = { Present: doPresent, Past: 'did' };
+
+    const updateText = () => {
+        const parts = [];
+
+        const invisible =
+            time.value != 'Future' &&
+            !perfect.checked &&
+            !continuous.checked &&
+            situation.value == 'Yes';
+
+        if (invisible) {
+            parts.push(pronoun.value);
+        } else {
+            if (situation.value == 'Question') {
+                parts.push(aux(), pronoun.value);
+            } else {
+                parts.push(pronoun.value, aux());
+            }
+        }
+
+        if (situation.value == 'No') {
+            parts.push('not');
+        }
+
+        if (time.value == 'Future') {
+            if (perfect.checked) {
+                parts.push('have');
+            } else if (continuous.checked) {
+                parts.push('be');
+            } else {
+                parts.push('eat');
+                return parts.join(' ');
+            }
+        }
+
+        if (perfect.checked) {
+            if (continuous.checked) {
+                parts.push('been');
+            } else {
+                parts.push('eaten');
+                return parts.join(' ');
+            }
+        }
+
+        if (continuous.checked) {
+            parts.push('eating');
+            return parts.join(' ');
+        }
+
+        if (invisible) {
+            parts.push(conjugate(eatTimes, time.value, pronoun.value));
+        } else {
+            parts.push('eat');
+        }
+
+        return parts.join(' ');
+    };
+
+    const conjugate = (map, time, pronoun) => {
+        const theTime = map[time];
+        if (typeof theTime == 'string') return theTime;
+        return theTime[pronoun] || theTime[pronounFallback[pronoun]] || theTime.default;
+    };
+
+    const aux = () => {
+        if (time.value == 'Future') {
+            return 'will';
+        }
+        if (perfect.checked) {
+            return conjugate(haveTimes, time.value, pronoun.value);
+        }
+        if (continuous.checked) {
+            return conjugate(beTimes, time.value, pronoun.value);
+        }
+        return conjugate(doTimes, time.value, pronoun.value);
+    };
+
+    document.querySelectorAll('select, input').forEach(el => {
+        el.onchange = () => {
+            document.querySelector('#english span').innerHTML = updateText();
+        };
+    });
+
+    document.querySelector('#english span')
+</script>
+</html>
