@@ -31,8 +31,8 @@ test.jakeactually.com {
 	}
 
 	handle_path /file-api/* {
-		rewrite * {path}
-		reverse_proxy jakeactually.com:3000
+		rewrite * /file-api{path}
+		reverse_proxy localhost:5001
 	}
 
 	file_server
