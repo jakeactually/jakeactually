@@ -51,6 +51,12 @@ section {
     mix-blend-mode: difference;
 }
 
+#social {
+    display: flex;
+    gap: 10px;
+    margin-top: 1em;
+}
+
 #games {
     display: grid;
     grid-template-columns: 1fr 1fr;
