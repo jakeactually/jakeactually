@@ -41,3 +41,8 @@ jakeactually.com {
 academic.jakeactually.com {
 	reverse_proxy localhost:3000
 }
+
+andamiajegye.com {
+	root ../giomar
+	file_server
+}
