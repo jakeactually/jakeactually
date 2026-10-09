@@ -62,6 +62,16 @@ section {
     mix-blend-mode: difference;
 }
 
+@supports (-webkit-touch-callout: none) {
+    section {
+        color: black;
+    }
+
+    #social img {
+        filter: none;
+    }
+}
+
 #games {
     display: grid;
     grid-template-columns: 1fr 1fr;
